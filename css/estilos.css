@@ -18,7 +18,7 @@ body {
 }
 
 .encabezado.fondo-menu {
-    background: #000001;
+    background: rgb(0, 0, 0, .8);
     height: 120px;
     -webkit-transition: all .8s ease;
     transition: all .8s ease;
@@ -367,10 +367,6 @@ li {
     min-height: 9rem;
 }
 
-.d-none img {
-    margin-top: 9rem;
-}
-
 /*----------------------------------------
 								SERVICIO
 -----------------------------------------*/
@@ -398,7 +394,7 @@ video {
 }
 
 .servicios {
-    background: url("../images/toto1.jpg") no-repeat center center;
+    background: url("../images/fondo5.jpg") no-repeat center center;
     background-size: cover;
     color: #fff;
 }
@@ -731,10 +727,11 @@ PIE DE PAGINA
 
 /*modal entrada*/
 
-.modal {
+.modalp {
+    position: fixed;
+    background: rgb(0,0,0,.8);
     width: 100%;
     height: 100vh;
-    background: rgb(0,0,0,0.8);
     top: 0;
     left: 0;
     display: -webkit-box;
@@ -744,6 +741,7 @@ PIE DE PAGINA
     animation: modal 4s 3s forwards;
     visibility: hidden;
     opacity: 0;
+    z-index: 300;
 }
 
 #cerrar {
@@ -751,7 +749,7 @@ PIE DE PAGINA
 }
 
 #cerrar:checked + label,
-#cerrar:checked ~ .modal {
+#cerrar:checked ~ .modalp {
     display: none;
 }
 
@@ -767,7 +765,7 @@ PIE DE PAGINA
     height: 40px;
     line-height: 40px;
     border-radius: 50%;
-    right:10px;
+    right: 10px;
     cursor: pointer;
     -webkit-animation: modal 4s;
     animation: modal 4s;
@@ -778,7 +776,7 @@ PIE DE PAGINA
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
     top: 0;
-    text-align: center
+    text-align: center;
 }
 
 @-webkit-keyframes modal {
@@ -807,9 +805,8 @@ h2 {
     text-align: center;
 }
 
-img {
+.tu-mejor-eleccion img,
+.contenido img {
     width: 100%;
     height: 100%;
 }
-
-/*# sourceMappingURL=estilos.css.map */

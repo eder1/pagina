@@ -14,13 +14,12 @@ body {
   padding: .5rem 0; }
 
 .encabezado.fondo-menu {
-  background: #454242;
+  background: #000001;
   height: 120px;
   -webkit-transition: all .8s ease;
   transition: all .8s ease; }
 
 .bienvenidos {
-  background: url("../images/fondo-encabezado.jpg") no-repeat center top;
   color: #fff;
   background-attachment: fixed;
   background-size: cover;
@@ -34,6 +33,65 @@ body {
       -ms-flex-direction: column;
           flex-direction: column; }
 
+.bienvenidos .servicio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 25px; }
+
+/*Animacion Banner*/
+.banner {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0px;
+          flex: 1 1 0;
+  -webkit-animation: banner 10s infinite;
+          animation: banner 10s infinite; }
+
+@-webkit-keyframes banner {
+  0%,
+    30% {
+    background: url("../images/fondo-encabezado.jpg") no-repeat center top;
+    background-size: cover;
+    opacity: 1; }
+  31%,
+    34% {
+    opacity: 0.1; }
+  35%,
+    65% {
+    background-image: url("../images/logo2.jpg");
+    opacity: 1; }
+  66%,
+    69% {
+    opacity: 0.1; }
+  70%,
+    100% {
+    background-image: url("../images/logo3.jpg");
+    opacity: 1; } }
+
+@keyframes banner {
+  0%,
+    30% {
+    background: url("../images/fondo-encabezado.jpg") no-repeat center top;
+    background-size: cover;
+    opacity: 1; }
+  31%,
+    34% {
+    opacity: 0.1; }
+  35%,
+    65% {
+    background-image: url("../images/logo2.jpg");
+    opacity: 1; }
+  66%,
+    69% {
+    opacity: 0.1; }
+  70%,
+    100% {
+    background-image: url("../images/logo3.jpg");
+    opacity: 1; } }
 .encabezado .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -131,7 +189,16 @@ body {
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  height: 90%; }
+
+.text-encabezado .contacto,
+.text-encabezado .nosotros {
+  color: black; }
+
+.text-encabezado .servicio {
+  color: white;
+  margin-top: 3rem; }
 
 .text-encabezado .btn-primary {
   margin-top: 1rem; }
@@ -205,7 +272,8 @@ SECCION AGENCIA
   color: #12AFAF; }
 
 .tu-mejor-eleccion ul,
-tu-mejor-eleccion ul, li {
+tu-mejor-eleccion ul,
+li {
   list-style: none; }
 
 .tu-mejor-eleccion ul li .fa {
@@ -237,6 +305,18 @@ tu-mejor-eleccion ul, li {
 /*----------------------------------------
 								SERVICIO
 -----------------------------------------*/
+video {
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  top: 45%;
+  left: 0%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: -1;
+  margin-top: 4rem;
+  /*-webkit-filter:sepia(100%)*/ }
+
 .servicios article img {
   width: 10%; }
 
@@ -294,15 +374,15 @@ tu-mejor-eleccion ul, li {
   opacity: 1;
   left: 0;
   position: relative;
-  -webkit-transition: all  .5s ease;
-  transition: all  .5s ease; }
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease; }
 
 .servicios h3 a:hover::after {
   left: -.5rem;
   color: #12AFAF;
   opacity: 1; }
 
-/*
+    /*
 SECCION DE ULTIMOS PROYECTOS
 */
 .ultimos-proyectos a {
@@ -319,7 +399,7 @@ SECCION DE ULTIMOS PROYECTOS
   padding-right: 0;
   /*quitando espaciados*/ }
 
-/*.ultimos-proyectos .owl-nav{
+    /*.ultimos-proyectos .owl-nav{
 	display: flex;
 	justify-content: center;
 	margin: 1rem 0;
@@ -348,7 +428,7 @@ div > a img {
   width: 500px;
   height: 250px; }
 
-/*-------------------------
+    /*-------------------------
 PIE DE PAGINA
 --------------------------*/
 .piedepagina {
@@ -398,7 +478,7 @@ PIE DE PAGINA
   text-decoration: none;
   color: green; }
 
-/*------------------------------------------------
+    /*------------------------------------------------
 				PAGINAS CONTACTOS
 -----------------------------------------------*/
 .paginas-internas .bienvenidos {
@@ -430,7 +510,7 @@ PIE DE PAGINA
   background: #009500;
   color: #fff; }
 
-/*------------------------------------------------
+    /*------------------------------------------------
 				PAGINAS SERVICIOS
 -----------------------------------------------*/
 .paginas-internas .lista-servicios {
@@ -477,7 +557,7 @@ PIE DE PAGINA
 .paginas-internas .lista-servicios .item-servicios .btn-primary {
   margin-top: auto; }
 
-/*----------------------------------------------
+    /*----------------------------------------------
 			MEDIAS QUERIES
 -----------------------------------------------*/
 @media (min-width: 768px) {
@@ -528,5 +608,74 @@ PIE DE PAGINA
     top: 5.8rem;
     -webkit-transition: all .5s ease;
     transition: all .5s ease; } }
+/*modal entrada*/
+.modal {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation: modal 4s 3s forwards;
+          animation: modal 4s 3s forwards;
+  visibility: hidden;
+  opacity: 0; }
+
+#cerrar {
+  display: none; }
+
+#cerrar:checked + label,
+#cerrar:checked ~ .modal {
+  display: none; }
+
+#cerrar + label {
+  position: fixed;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  color: #fff;
+  font-size: 25px;
+  z-index: 5000000;
+  background: darkred;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  right: 1px;
+  cursor: pointer;
+  -webkit-animation: modal 4s;
+          animation: modal 4s;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  top: 0; }
+
+@-webkit-keyframes modal {
+  100% {
+    visibility: visible;
+    opacity: 1; } }
+
+@keyframes modal {
+  100% {
+    visibility: visible;
+    opacity: 1; } }
+.contenido {
+  margin: auto;
+  width: 60%;
+  height: 60%;
+  background: white;
+  border-radius: 10px; }
+
+h2 {
+  text-align: center; }
+
+img {
+  width: 100%;
+  height: 100%; }
 
 /*# sourceMappingURL=estilos.css.map */
